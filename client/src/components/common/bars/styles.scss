@@ -1,0 +1,29 @@
+.bars {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 20px;
+  height: 26px;
+  background-color: transparent;
+  border: none;
+  &__bar {
+    position: relative;
+    width: 22px;
+    border-radius: 10px;
+    height: 2px;
+    background-color: black;
+    transform-origin: 1px;
+    transition: 0.3s linear all;
+    &--active:nth-child(1) {
+      transform: rotate(45deg);
+    }
+    &--active:nth-child(2) {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    &--active:nth-child(3) {
+      transform: rotate(-45deg);
+    }
+  }
+}

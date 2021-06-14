@@ -1,0 +1,34 @@
+@import "../../../styles/settings.scss";
+.navbar {
+  border-bottom: 1px solid $border-gray;
+  z-index: 101;
+  margin: 10px 0;
+  &__wrapper {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
+    padding: 10px 20px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  &__dropDown {
+    overflow: hidden;
+    transition: 0.3s linear all;
+    background-color: white;
+    width: 100%;
+    margin: 1px 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+    transform: translateY(20px);
+    &--active {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
+  &__list {
+    list-style-type: none;
+    padding: 20px;
+  }
+}

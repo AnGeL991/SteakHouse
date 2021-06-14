@@ -1,8 +1,20 @@
 import { FC } from "react";
+import { MainLayout } from "components/layout";
+import {BrowserRouter} from 'react-router-dom';
+import { History } from "history";
 import 'normalize.css';
+import './styles/global.scss';
 
-const App: FC = () => {
-  return <div></div>;
+interface IApp {
+  history:History;
+}
+
+const App: FC<IApp> = ({history}) => {
+  return <BrowserRouter {...{history}}>
+    <MainLayout>
+      <div></div>
+    </MainLayout>
+  </BrowserRouter>;
 };
 
 export default App;
