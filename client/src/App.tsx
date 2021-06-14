@@ -1,12 +1,8 @@
-import React from 'react';
+import { FC } from "react";
+import 'normalize.css';
 
-
-function App() {
-  return (
-   <div>
-     a
-   </div>
-  );
-}
+const App: FC = () => {
+  return <div></div>;
+};
 
 export default App;
