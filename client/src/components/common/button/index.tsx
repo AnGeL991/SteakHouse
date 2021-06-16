@@ -1,12 +1,24 @@
-import {FC} from 'react';
-import './styles.scss';
+import { FC, ReactNode } from "react";
+import "./styles.scss";
 
 interface IButton {
-    text:string;
-    onClick?:()=>void;
+  children: ReactNode;
+  onClick?: () => void;
+  width?: string;
 }
 
-export const PrimaryButton:FC<IButton> =({text,onClick})=>{
+export const PrimaryButton: FC<IButton> = ({ children, onClick, width }) => {
+  return (
+    <button className="primaryButton" {...{ onClick }} style={{ width }}>
+      {children}
+    </button>
+  );
+};
 
-    return <button className='primaryButton' {...{onClick}}>{text}</button>
-} 
+export const SecondaryButton: FC<IButton> = ({ children, onClick, width }) => {
+  return (
+    <button className="secondaryButton" {...{ onClick }} style={{ width }}>
+      {children}
+    </button>
+  );
+};
