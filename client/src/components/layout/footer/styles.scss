@@ -1,0 +1,111 @@
+@import "../../../styles/settings.scss";
+
+.footer {
+  background-color: $footer-primary;
+  position: relative;
+  bottom: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 65px;
+  color: $font-footer;
+  margin: 20px;
+  &__title {
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 25px;
+  }
+  &__section {
+    text-align: center;
+    padding: 20px 0;
+    width: 90%;
+  }
+  &__field {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__input {
+    background-color: $footer-secondary;
+    border: none;
+    width: 70%;
+    height: 40px;
+    padding: 10px;
+    color: #666;
+    font-size: 13px;
+
+    &::placeholder {
+      font-size: 12px;
+    }
+  }
+  &__join {
+    padding: 10px;
+    height: 40px;
+    font-size: 12px;
+    border: none;
+    background-color: $footer-secondary;
+    color: $font-hover;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  &__description {
+    padding: 20px;
+    font-size: 13px;
+    line-height: 1.6;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-evenly;
+    list-style-type: none;
+    max-width: 200px;
+    margin: 0 auto;
+    margin-bottom: 25px;
+  }
+  &__media {
+    background-color: $footer-secondary;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    font-size: 12px;
+    width: 30px;
+    height: 30px;
+  }
+  &__place {
+    margin-top: 60px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: $footer-secondary;
+  }
+}
+
+@media (min-width: 768px) {
+  .footer {
+    flex-direction: row;
+    flex-wrap: wrap;
+    &__section {
+      width: calc(100% / 3);
+    }
+  }
+}
+@media (min-width: 1220px) {
+  .footer {
+    &__section {
+      .logo {
+        width: 120px;
+      }
+      width: calc(1220px / 3);
+    }
+    &__title {
+      font-size: 20px;
+    }
+  }
+}
