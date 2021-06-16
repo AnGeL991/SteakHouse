@@ -1,15 +1,15 @@
 @import "../../../styles/settings.scss";
 .navbar {
-  border-bottom: 1px solid $border-gray;
   z-index: 101;
-  margin: 10px 0;
+  margin: 20px 20px 0px;
   &__wrapper {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05);
-    padding: 10px 20px;
+    box-shadow: 0 3px 10px 0px rgba(0, 0, 0, 0.1);
+    padding: 25px 20px;
     position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
   }
   &__dropDown {
     overflow: hidden;
@@ -22,7 +22,9 @@
     left: 0;
     opacity: 0;
     transform: translateY(20px);
+    visibility: hidden;
     &--active {
+      visibility: visible;
       opacity: 1;
       transform: translateY(0px);
     }

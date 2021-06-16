@@ -24,8 +24,9 @@ export const DropDownLinks: FC<IDropDownLink> = ({ text, sublinks }) => {
   const { ArrowDown, ArrowUp } = Icons;
   const { open, handleToggle } = useToggleClick();
   const height = sublinks.length * 46;
+
   const links = sublinks.map((el) => (
-    <li className="link">
+    <li className="link" key={el.text}>
       <Link to={el.path}>{el.text}</Link>
     </li>
   ));
@@ -37,9 +38,9 @@ export const DropDownLinks: FC<IDropDownLink> = ({ text, sublinks }) => {
   );
 
   return (
-    <li onClick={handleToggle}>
+    <li onClick={handleToggle} className='link'>
       <div className="subList__toggler">
-        <p className="link">{text}</p>
+        <p >{text}</p>
         {arrow}
       </div>
       <ul
