@@ -1,0 +1,25 @@
+@import '../../../../styles/settings.scss';
+
+.eachContact{
+  margin:20px 0;
+  letter-spacing: 0px;
+  &__title {
+    @include title;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  &__description {
+    @include description;
+    text-align: left;
+    margin:10px 0;
+  }
+  &__link {
+    color:$font-hover;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  &__info {
+    margin:5px 0;
+  }
+}

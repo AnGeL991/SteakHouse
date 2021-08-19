@@ -1,0 +1,75 @@
+@import "../../../styles/settings.scss";
+
+.menu {
+  @include max-width;
+  &__intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__subtitle {
+    @include subTitle;
+    width: 100%;
+  }
+  &__title {
+    @include title;
+  }
+  &__icon {
+    @include steakIcon;
+  }
+  &__description {
+    @include description;
+    line-height: 1.6;
+  }
+  &__list {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    text-transform: capitalize;
+    color: black;
+    font-weight: 500;
+  }
+  &__eachCategory {
+    margin: 20px 0;
+    padding-bottom: 5px;
+    transition: $linear;
+    position: relative;
+    &::before {
+      content: "";
+      opacity: 1;
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background-color: $font-hover;
+      transition: $linear;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      bottom: -1px;
+    }
+    &--active {
+      color: $font-hover;
+      &::before {
+        width: 100%;
+        opacity: 1;
+      }
+    }
+  }
+  &__dishes {
+    margin: 20px 0;
+  }
+  &__button {
+    margin: 30px auto;
+  }
+}
+@media (min-width: 1024px) {
+  .menu {
+    &__dishes {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}

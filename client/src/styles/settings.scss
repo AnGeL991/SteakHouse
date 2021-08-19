@@ -1,15 +1,27 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Ruthie&display=swap");
+@import "./mixin.scss";
 
 /*Font-colors*/
 $font-dark: #282828;
 $font-hover: #bb9356;
 $font-gray: #9b9b9b;
 $font-yellow: #ffc80a;
+$font-footer: rgba(255, 255, 255, 0.55);
+$font-lightGray:#A5A5A5;
+$font-description: #666666;
 /*Background-color*/
 $back-dark: #282828;
+$footer-primary: #222;
+$footer-secondary: #1b1b1b;
+$back-hover: rgba(27, 27, 27, 0.8);
 /*Font-Family*/
 $font-poppins: "Poppins", sans-serif;
 $font-roboto: "Roboto", sans-serif;
+$font-ruthie: "Ruthie", sans-serif;
+$font-abril: "Abril Fatface", cursive;
 /*Border-colors*/
 $border-gray: #eee;
 /*Shadow*/
+
+/* Transition*/
+$linear: 0.3s linear all;

@@ -11,11 +11,12 @@ export const Bars: FC<IBars> = ({ open, handleToggle }) => {
     <span
       key={el}
       className={`bars__bar ${open && "bars__bar--active"}`}
+      data-testid='test-bar'
     ></span>
   ));
 
   return (
-    <button className="bars" onClick={handleToggle}>
+    <button className="bars" onClick={handleToggle} data-testid='test-bars'>
       {bars}
     </button>
   );

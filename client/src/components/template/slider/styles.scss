@@ -1,0 +1,79 @@
+@import "../../../styles/settings.scss";
+
+.mainBanner {
+  position: relative;
+
+  &__svg {
+    @include svg;
+    top: 50%;
+    width: 160px;
+    height: 30px;
+  }
+  &__left {
+    transform: translate(-50%, -40%) rotate(-90deg);
+    left: 12px;
+    z-index: 10;
+  }
+  &__right {
+    right: -66px;
+    transform: translateY(-40%) rotate(90deg);
+    z-index: 10;
+    &:active {
+      right: 0px;
+    }
+  }
+  .slick-dots {
+    bottom: 25px;
+  }
+}
+.slick-dots {
+  li.slick-active button {
+    border-radius: 50%;
+    border: 2px solid white;
+    width: 15px;
+    height: 15px;
+    top: 2px;
+    &::before {
+      top: -2px;
+      width: 15px;
+      height: 15px;
+      color: white;
+      opacity: 1;
+      font-size: 6px;
+      border-radius: 50%;
+    }
+  }
+  li button::before {
+    color: white;
+    font-size: 10px;
+    opacity: 1;
+  }
+}
+.arrow {
+  position: absolute;
+  &__left,
+  &__right {
+    top: 50%;
+    z-index: 110;
+    color: black;
+    transform: translateY(-30%);
+    font-size: 22px;
+  }
+  &__right {
+    right: 0;
+  }
+}
+.axeIcon {
+  color: white;
+  font-size: 72px;
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@media (min-width: 1024px) {
+  .mainBanner {
+    margin: 20px 0px;
+  }
+}

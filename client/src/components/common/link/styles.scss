@@ -4,7 +4,7 @@
   padding: 15px 0;
   font-weight: 700;
   font-size: 14px;
-  transition: 0.3s linear all;
+  transition: $linear;
   color: black;
   text-transform: uppercase;
 
@@ -19,7 +19,7 @@
 
 .subList {
   list-style-type: none;
-  padding: 10px 30px;
+  padding: 0px 30px;
   opacity: 0;
   overflow: hidden;
   height: 0;
@@ -36,5 +36,50 @@
   }
   &__icon {
     color: $font-gray;
+  }
+}
+
+@media (min-width: 1024px) {
+  .link {
+    margin: 0 15px;
+    padding: 10px 0;
+    position: relative;
+    color: white;
+    font-size: 14px;
+    font-weight: 900;
+    transition: 0s linear all;
+    a {
+      color: white;
+    }
+    &::before {
+      content: "";
+      opacity: 1;
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background-color: $font-hover;
+      transition: $linear;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      bottom: -1px;
+    }
+    &--active {
+      color: $font-hover;
+      a {
+        color: $font-hover;
+      }
+      &::before {
+        width: 100%;
+        opacity: 1;
+      }
+    }
+  }
+  .subList {
+    padding: 0;
+    position: absolute;
+    &__icon {
+      display: none;
+    }
   }
 }

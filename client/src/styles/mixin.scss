@@ -1,0 +1,87 @@
+@mixin subTitle {
+  font-size: 32px;
+  color: $font-hover;
+  font-family: $font-ruthie;
+  font-weight: 500;
+  width: 50%;
+  text-align: center;
+  text-transform: capitalize;
+}
+@mixin title {
+  opacity: 0.9;
+  font-weight: 900;
+  font-size: 32px;
+  padding: 0;
+  margin: 0 0 20px;
+  color: black;
+  text-transform: capitalize;
+  font-family: $font-abril;
+}
+@mixin steakIcon {
+  color: $font-hover;
+  font-size: 48px;
+}
+@mixin background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 98%;
+}
+@mixin description {
+  line-height: 1.6;
+  margin: 10px 0;
+  text-align: center;
+  color: #a5a5a5;
+  font-size: 14px;
+}
+@mixin background-border {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+  height: 95%;
+  border: 1px dashed $font-hover;
+}
+@mixin button {
+  border: 2px solid #222;
+  border-radius: 40px;
+  color: black;
+  font-weight: 600;
+  padding: 15px 25px;
+  margin: 10px 0;
+  background-color: transparent;
+  transition: $linear;
+  text-transform: uppercase;
+  opacity: 0.9;
+  &:hover {
+    color: white;
+    background-color: $font-hover;
+    border-color: $font-hover;
+  }
+}
+@mixin uniqeuIcon {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 10px;
+  opacity: 0.8;
+  background-image: url("https://demo.farost.net/steakin/wp-content/themes/steakin/assets/images/h-icon1.png");
+}
+@mixin svg {
+  position: absolute;
+  width: 128px;
+  height: 14px;
+}
+@mixin max-width {
+  max-width: 1220px;
+  margin: 0 auto;
+}
+@mixin input {
+  padding:15px 20px;
+  width: 100%;
+  font-size: 14px;
+  border:2px solid $border-gray;
+  outline:none;
+  color:$font-gray;
+}

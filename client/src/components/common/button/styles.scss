@@ -1,21 +1,50 @@
 @import "../../../styles/settings.scss";
 
 .primaryButton {
-  border: 2px solid #222;
-  border-radius: 40px;
-  color: black;
-  font-weight: 600;
-  padding: 15px 25px;
-  margin: 10px 0;
-  background-color: transparent;
-  transition: $linear;
-  text-transform: uppercase;
-  &:hover {
-    color: white;
-    background-color: $font-hover;
-    border-color: $font-hover;
-  }
+  @include button;
 }
 .secondaryButton {
-  border: 2px solid white;
+  @include button;
+  margin: 20px 0;
+  width: 100%;
+  border: 2px solid $font-hover;
+  color: $font-hover;
+  &--full {
+    background-color: $font-hover;
+    color: white;
+  }
+}
+
+.lightButton {
+  @include button;
+  border: 2px solid #fff;
+  color: #fff;
+  font-size: 14px;
+}
+.bookButton {
+  display: none;
+  text-transform: uppercase;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin: 0 20px;
+  font-size: 14px;
+  background-color: $font-hover;
+  font-weight: 900;
+}
+.submitButton {
+  width:100%;
+  background-color: $font-dark;
+  color:#fff;
+  text-transform: uppercase;
+  border:none;
+  border-radius: 2px;
+  font-weight: 700;
+  padding:20px;
+  font-size: 14px;
+}
+@media (min-width: 1024px) {
+  .bookButton {
+    display: block;
+  }
 }

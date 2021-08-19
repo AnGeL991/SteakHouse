@@ -1,0 +1,43 @@
+.contactForm {
+  margin: 20px 0;
+  &__fieldset {
+    border: none;
+  }
+  &__field,
+  &__textArea,
+  &__submit {
+    margin: 25px 10px;
+  }
+}
+
+@media (min-width: 768px) {
+  .contactForm {
+    &__fieldset {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+    &__field {
+      width: 47%;
+    }
+    &__field,
+    &__textArea,
+    &__submit {
+      margin: 15px 10px;
+    }
+    &__textArea,
+    &__submit {
+      width: 100%;
+    }
+  }
+}
+@media (min-width:1024px ){
+  .contactForm {
+    width: 50%;
+    &__field {
+      width: 45%;
+    }
+  }
+ 
+}

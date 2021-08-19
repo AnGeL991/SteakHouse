@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import { Icons } from "components/common";
 import "./styles.scss";
 import { useToggleClick } from "_hooks";
+
 interface IEachLink {
   text: string;
   path: string;
 }
+
 interface IDropDownLink {
   text: string;
   sublinks: Array<{ text: string; path: string }>;
@@ -38,7 +40,7 @@ export const DropDownLinks: FC<IDropDownLink> = ({ text, sublinks }) => {
   );
 
   return (
-    <li onClick={handleToggle} className='link'>
+    <li onClick={handleToggle} className='link link--active'>
       <div className="subList__toggler">
         <p >{text}</p>
         {arrow}

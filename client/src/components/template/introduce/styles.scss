@@ -1,5 +1,6 @@
 @import "../../../styles/settings.scss";
 .introduce {
+  @include max-width;
   &__wrapper {
     margin: 80px 0;
     display: flex;
@@ -26,5 +27,47 @@
   &__buttons {
     text-align: center;
     margin-bottom: 40px;
+  }
+}
+@media (min-width: 768px) {
+  .introduce {
+    &__wrapper {
+      margin: 40px 0;
+    }
+    &__buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 80%;
+      margin: 20px auto;
+    }
+    &__button {
+      margin: 0 10px;
+    }
+    &__banners {
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
+}
+@media (min-width: 1024px) {
+  .introduce {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__wrapper,
+    &__banners {
+      width: 50%;
+    }
+    &__buttons {
+      flex-direction: column;
+      margin: 10px 0;
+    }
+    &__button {
+      margin: 10px 0;
+    }
   }
 }

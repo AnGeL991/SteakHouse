@@ -1,0 +1,27 @@
+@import "../../../styles/settings.scss";
+
+.news {
+  margin: 40px 0;
+  @include max-width;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  &__post {
+    width: 90%;
+    margin: 10px 0;
+  }
+  &__subtitle {
+    @include subTitle;
+    width: 70%;
+  }
+  &__title {
+    @include title;
+  }
+  &__uniqueIcon {
+    @include uniqeuIcon;
+  }
+}

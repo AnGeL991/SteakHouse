@@ -1,0 +1,23 @@
+@import '../../../styles/settings.scss';
+
+.fallowUs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 320px;
+  &__title{
+    @include title;
+    margin:10px 0 30px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  &__list {
+    display: flex;
+    list-style-type: none;
+  }
+  &__eachMedia {
+    margin-right:10px;
+  }
+}

@@ -4,7 +4,6 @@
   background-color: $footer-primary;
   position: relative;
   bottom: 0;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,6 +11,17 @@
   padding-top: 65px;
   color: $font-footer;
   margin: 20px;
+  &__svg {
+    @include svg;
+    top: -12px;
+  }
+  &__bottom {
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-180deg);
+    top: -14px;
+    width: 160px;
+    height: 30px;
+  }
   &__title {
     text-transform: uppercase;
     color: #fff;
@@ -76,6 +86,7 @@
     height: 30px;
   }
   &__place {
+    position: relative;
     margin-top: 60px;
     text-align: center;
     display: flex;
@@ -84,6 +95,16 @@
     justify-content: center;
     width: 100%;
     background-color: $footer-secondary;
+  }
+  &__icon {
+    color: white;
+    font-size: 28px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: $linear;
+    animation: Icon 1s infinite;
   }
 }
 
@@ -107,5 +128,16 @@
     &__title {
       font-size: 20px;
     }
+  }
+}
+@keyframes Icon {
+  0% {
+    top: 0px;
+  }
+  50% {
+    top: 5px;
+  }
+  100% {
+    top: 0px;
   }
 }

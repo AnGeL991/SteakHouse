@@ -1,0 +1,136 @@
+@import "../../../styles/settings.scss";
+
+.dish {
+  width: 100%;
+  box-shadow: 0 3px 10px 0px rgba(0, 0, 0, 0.1);
+  &__img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+  &__imageBox {
+    position: relative;
+    &:hover .dish__background {
+      opacity: 1;
+    }
+  }
+  &__background {
+    @include background;
+    transition: $linear;
+    opacity: 0;
+    background-color: $back-hover;
+  }
+  &__circle {
+    border-radius: 50%;
+    background-color: $font-hover;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &__icon {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    color: #fff;
+  }
+  &__info {
+    background-color: #fff;
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+  }
+  &__price {
+    color: $font-hover;
+    font-weight: 600;
+    font-size: 18px;
+  }
+  &__border {
+    @include background-border;
+  }
+  &__title {
+    color: $font-dark;
+    margin: 10px 0;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1.6;
+  }
+  &__ingredient {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.6;
+  }
+  &__uniqueIcon {
+    @include uniqeuIcon;
+  }
+  &__svg {
+    @include svg;
+    top: -15px;
+    transform: rotate(-180deg);
+  }
+}
+
+@media (min-width: 768px) {
+  .dish {
+    display: flex;
+    &__imageBox,
+    &__info {
+      width: 50%;
+    }
+    &__svg {
+      top: 50%;
+      left: -68px;
+      transform: rotate(90deg);
+    }
+    &:nth-child(even) .dish__imageBox {
+      order: 1;
+    }
+  }
+}
+@media (min-width: 1024px) {
+  .dish {
+    box-shadow: none;
+    flex-direction: row;
+    width: 50%;
+    &__info {
+      box-shadow: 0 3px 10px 0px rgba(0, 0, 0, 0.3);
+    }
+    &:nth-child(1) {
+      .dish__imageBox {
+        order: 1;
+      }
+      .dish__svg {
+        right: -70px;
+        left: initial;
+        transform: rotate(-90deg);
+      }
+    }
+    &:nth-child(2) {
+      margin-top: 5px;
+      .dish__svg {
+        right: -70px;
+        left: initial;
+        transform: rotate(-90deg);
+      }
+      .dish__imageBox {
+        order: 1;
+      }
+    }
+    &:nth-child(3n) .dish__imageBox {
+      order: 0;
+    }
+    &:nth-child(4n) .dish__imageBox {
+      order: 0;
+    }
+  }
+}

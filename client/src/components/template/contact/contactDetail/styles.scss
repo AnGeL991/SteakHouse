@@ -1,0 +1,19 @@
+.contactDetails{
+  margin:20px;
+}
+
+@media (min-width:768px) {
+  .contactDetails {
+    display: flex;
+    flex-wrap: wrap;
+    &__detail {
+      width: 50%;
+      padding:0 10px;
+    }
+  }
+}
+@media (min-width:1024px ){
+  .contactDetails {
+    width: 60%;
+  }
+}

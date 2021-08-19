@@ -1,4 +1,11 @@
-export { Bars } from "./bars";
-export { EachLink, DropDownLinks } from "./link";
-export { Icons } from "./icons";
-export { Logo } from "./logo";
+export { Bars } from './bars';
+export { EachLink, DropDownLinks } from './link';
+export { Icons } from './icons';
+export { Logo } from './logo';
+export { Button, BookButton, SubmitButton } from './button';
+export { Stars } from './stars';
+export { UniqueIcon } from './uniqueIcon';
+export { SlickArrowNext, SlickArrowPrew } from './arrows';
+export { MediaIcon } from './media';
+export { Input } from './input';
+export { TextArea } from './textArea';

@@ -1,0 +1,13 @@
+@import '../../../../styles/settings.scss';
+
+.contactInfo {
+  color:$font-lightGray;
+  margin:20px 0px;
+  font-size: 12px;
+  line-height: 20px;
+}
+@media (min-width:1024px) {
+  .contactInfo {
+    margin:20px 0px;
+  }
+}
