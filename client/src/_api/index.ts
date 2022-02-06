@@ -1,4 +1,4 @@
-import { API_URL } from "config";
+import { API_URL } from 'config';
 
 export async function client(
   endpoint: RequestInfo,
@@ -7,13 +7,13 @@ export async function client(
   options?: RequestInit
 ) {
   const { ...customConfig } = options ?? {};
-  const headers = { "Content-Type": "application/json" };
+  const headers = { 'Content-Type': 'application/json' };
   const config: RequestInit = {
-    method: data ? "POST" : "GET",
+    method: data ? 'POST' : 'GET',
     body: data ? JSON.stringify(data) : undefined,
     headers: {
       ...headers,
-      Authorization: AuthToken ? `Bearer ${AuthToken}` : "",
+      Authorization: AuthToken ? `Bearer ${AuthToken}` : '',
       ...customConfig.headers,
     },
     ...customConfig,
@@ -25,7 +25,7 @@ export async function client(
       return res;
     }
     return Promise.reject(res);
-  } catch (error) {
+  } catch (error: any) {
     return Promise.reject(error ? error.message : data);
   }
 }

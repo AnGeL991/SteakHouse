@@ -1,8 +1,8 @@
-import { response } from "express";
-import { model, Schema } from "mongoose";
-import { IUserDocument, IUser, IUserModel } from "../interfaces/user";
-import bcryptjs from "bcryptjs";
-import { ResponseProcessor } from "../utils";
+import { response } from 'express';
+import { model, Schema } from 'mongoose';
+import { IUserDocument, IUser, IUserModel } from '../interfaces/user';
+import bcryptjs from 'bcryptjs';
+import { ResponseProcessor } from '../utils';
 
 const UserSchema = new Schema<IUserDocument, IUserModel>(
   {
@@ -15,14 +15,14 @@ const UserSchema = new Schema<IUserDocument, IUserModel>(
     city: { type: String },
     state: { type: String },
     code: { type: String },
-    country: { type: String },
+    country: { type: String }
   },
   {
-    timestamps: true,
+    timestamps: true
   }
 );
 
-UserSchema.pre("save", async function (this: IUserDocument) {
+UserSchema.pre('save', async function (this: IUserDocument) {
   let user = this;
   try {
     const salt = await bcryptjs.genSalt(10);
@@ -30,7 +30,7 @@ UserSchema.pre("save", async function (this: IUserDocument) {
       const hashedPassword = await bcryptjs.hash(user.password, salt);
       user.password = hashedPassword;
     }
-  } catch (err) {
+  } catch (err: any) {
     ResponseProcessor(response).sendError(err.message);
   }
 });
@@ -39,21 +39,15 @@ UserSchema.methods.comparePassword = function (candidatePassword: string) {
   return;
 };
 
-UserSchema.statics.updateHashedPassword = async function (
-  id: string,
-  password: string
-) {
+UserSchema.statics.updateHashedPassword = async function (id: string, password: string) {
   const salt = await bcryptjs.genSalt(10);
   const newPassword = await bcryptjs.hash(password, salt);
   await this.findByIdAndUpdate(id, { password: newPassword });
 };
-UserSchema.statics.updateAccount = async function (
-  _id: string,
-  updateDate: IUser
-) {
+UserSchema.statics.updateAccount = async function (_id: string, updateDate: IUser) {
   return await this.findOneAndUpdate({ _id }, { ...updateDate });
 };
 
-const UserModel = model<IUserDocument, IUserModel>("User", UserSchema);
+const UserModel = model<IUserDocument, IUserModel>('User', UserSchema);
 
 export default UserModel;

@@ -16,14 +16,16 @@ export const register = async (req: Request, res: Response) => {
       return ResponseProcessor(res).sendError({
         message: 'Email already exists'
       });
-  } catch (err) {
+  } catch (err: any) {
     return ResponseProcessor(res).sendError({ error: err.message });
   }
 };
+
 /* User activation */
 export const activation = (req: Request, res: Response) => {
   return errorHandler(res, User.addUser(res.locals.user));
 };
+
 /* User Login */
 export const login = async (req: Request, res: Response) => {
   const { email, password } = req.body;
@@ -41,7 +43,7 @@ export const login = async (req: Request, res: Response) => {
       });
     const token = CreateToken({ _id: user._id }, 31556926);
     return res.send({ token });
-  } catch (err) {
+  } catch (err: any) {
     return ResponseProcessor(res).sendError({ error: err.message });
   }
 };
@@ -61,7 +63,7 @@ export const forgetPassword = async (req: Request, res: Response) => {
         message: 'Email jest nie prawidłowy'
       });
     //const token = CreateToken({ _id: user._id }, 31556926);
-  } catch (err) {
+  } catch (err: any) {
     return ResponseProcessor(res).sendError({ error: err.message });
   }
 };

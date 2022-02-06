@@ -14,7 +14,7 @@ InventorySchema.statics.createNewFromRequestBody = async function (props) {
   try {
     const newProduct = new this(props);
     await newProduct.save();
-  } catch (err) {
+  } catch (err: any) {
     throw new Error(err.message);
   }
 };
@@ -27,7 +27,7 @@ InventorySchema.statics.findAllProduct = async function () {
 InventorySchema.statics.addComment = async function (id, newComment) {
   try {
     return await this.findOneAndUpdate({ _id: id }, { $addToSet: { comment: [newComment] } });
-  } catch (err) {
+  } catch (err: any) {
     throw new Error(err.message);
   }
 };

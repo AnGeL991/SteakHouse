@@ -18,7 +18,7 @@ export async function errorHandler(res: Response, toRun: any, optionalBody?: any
   try {
     const result = await toRun;
     return ResponseProcessor(res).sendResult({ result, optionalBody });
-  } catch (error) {
+  } catch (error: any) {
     return ResponseProcessor(res).sendError({ message: error.message, error });
   }
 }
